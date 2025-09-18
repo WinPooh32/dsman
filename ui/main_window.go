@@ -64,7 +64,12 @@ func NewMainWindow(settings MainWindowSettings) *MainWindow {
 	}
 
 	mw.wnd = g.NewMasterWindow("dsman", settings.Width, settings.Height, 0)
-	mw.wnd.SetStyle(themes.Light())
+
+	switch settings.Theme {
+	case themes.LightName:
+		mw.wnd.SetStyle(themes.Light())
+	case themes.DarkName:
+	}
 
 	mw.wnd.SetCloseCallback(func() bool {
 		mw.Close()
