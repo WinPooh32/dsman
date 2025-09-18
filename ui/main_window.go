@@ -63,7 +63,7 @@ func NewMainWindow(settings MainWindowSettings) *MainWindow {
 		closeOnce: sync.Once{},
 	}
 
-	mw.wnd = g.NewMasterWindow("dsman", settings.Width, settings.Height, 0)
+	mw.wnd = g.NewMasterWindow(settings.Title, settings.Width, settings.Height, 0)
 
 	switch settings.Theme {
 	case themes.LightName:
