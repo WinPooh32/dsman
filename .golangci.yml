@@ -45,3 +45,6 @@ linters:
     testifylint:
       disable:
         - require-error
+    mnd:
+      ignored-files:
+        - ui/themes/.*.go$
